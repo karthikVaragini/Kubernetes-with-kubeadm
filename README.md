@@ -33,7 +33,7 @@
 		-> kubectl get pods -n kube-system
 
 
-## * Tutorial for kubernet *
+##  *Tutorial for kubernet*
 https://www.youtube.com/watch?v=F-p_7XaEC84&list=PL9ooVrP1hQOF907pPru97cKY9nKwOrDTP
 Setup kubernetes with kubeadm using below link
 https://kubernetes.io/docs/setup/independent/install-kubeadm/		
