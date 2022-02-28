@@ -1,6 +1,6 @@
 # Steps to setup KUBERNETS with KUBEADM
 ====================================================================
-## First run below commands for kubernet setup
+### First run below commands for kubernet setup
 
 		-> apt-get update && apt-get install -y apt-transport-https curl
 		-> curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
@@ -13,27 +13,27 @@
 		-> systemctl daemon-reload
 		-> systemctl restart kubelet
 
-## After kubernet setup, set the pod network ip, using below command
+### After kubernet setup, set the pod network ip, using below command
 		-> kubeadm init --apiserver-advertise-address=192.168.3.143 --pod-network-cidr=10.97.0.0/16
 		
-## After above command kubets suggest few commands to run, please run those before move into next command
+### After above command kubets suggest few commands to run, please run those before move into next command
 
-## setup Calico 
+### setup Calico 
 		-> kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
 		-> wget https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
 	edit the pod n/w id to 10.97.0.0/16 (for edit "i", for save and queit "wq")
 		-> kubectl apply -f calico.yaml
-## Finally Master Isolation
+### Finally Master Isolation
 		-> kubectl taint nodes --all node-role.kubernetes.io/master-
 
-# Check the status of kubernet using below command
+### Check the status of kubernet using below command
 		-> service kubelet status
 
-## Check how many pods running, using below command
+### Check how many pods running, using below command
 		-> kubectl get pods -n kube-system
 
 
-# Tutorial for kubernet
+## * Tutorial for kubernet *
 https://www.youtube.com/watch?v=F-p_7XaEC84&list=PL9ooVrP1hQOF907pPru97cKY9nKwOrDTP
 Setup kubernetes with kubeadm using below link
 https://kubernetes.io/docs/setup/independent/install-kubeadm/		
